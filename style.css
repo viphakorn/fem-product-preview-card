@@ -1,0 +1,105 @@
+:root {
+  --clr-primary-100: hsl(30, 38%, 92%);
+  --clr-primary-400: hsl(158, 36%, 37%);
+
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-400: hsl(228, 12%, 48%);
+  --clr-neutral-900: hsl(212, 21%, 14%);
+
+  --ff-fraunces: "Fraunces";
+  --ff-montserrat: "Montserrat";
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+p {
+  font-size: 0.875rem;
+}
+body {
+  background-color: var(--clr-primary-100);
+  font-family: var(--ff-montserrat), sans-serif;
+}
+main {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding-inline: 1rem;
+}
+.product-card {
+  max-width: 600px;
+  width: 100%;
+  min-height: 450px;
+  border-radius: 0.75em;
+  background-color: var(--clr-neutral-100);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+}
+.product-card .info {
+  padding: 2rem;
+  display: flex;
+  flex-flow: column;
+  gap: 1.5rem;
+}
+.type {
+  letter-spacing: 4px;
+  color: var(--clr-neutral-400);
+}
+.name {
+  font-family: var(--ff-fraunces);
+  font-weight: 700;
+  color: var(--clr-neutral-900);
+  line-height: 1;
+}
+.description {
+  color: var(--clr-neutral-400);
+  line-height: 1.5;
+}
+.price {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.price h1 {
+  color: var(--clr-primary-400);
+  font-family: var(--ff-fraunces);
+  font-weight: 700;
+}
+.price p {
+  color: var(--clr-neutral-400);
+  text-decoration: line-through;
+}
+.action {
+  background-color: var(--clr-primary-400);
+  cursor: pointer;
+  border: none;
+  color: var(--clr-neutral-100);
+  padding: 1.25em;
+  border-radius: 0.75em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  font-family: var(--ff-montserrat);
+  transition: 0.4s;
+}
+.action:is(:hover, :focus) {
+  background-color: hsl(158, 36%, 18%);
+}
+@media (max-width: 40em) {
+  .product-card {
+    grid-template-columns: 1fr;
+  }
+  .product-card .info {
+    padding: 1.5rem;
+  }
+  .product-card .image img {
+    content: url("images/image-product-mobile.jpg");
+  }
+}
